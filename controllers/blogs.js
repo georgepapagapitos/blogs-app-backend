@@ -55,7 +55,17 @@ blogsRouter.delete('/:id', async (request, response) => {
 });
 
 blogsRouter.put('/:id', async (request, response) => {
-  const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, { $inc: { likes: 1 } }, { new: true });
+
+  const { author, title, url, likes } = request.body;
+
+  const blog = {
+    author,
+    title,
+    url,
+    likes
+  };
+
+  const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, blog, { new: true });
   response.json(updatedBlog);
 });
 
