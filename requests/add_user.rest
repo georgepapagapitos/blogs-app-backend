@@ -5,5 +5,5 @@ Content-Type: application/json
   "blogs": [],
   "username": "gpapagapitos",
   "name": "George Papagapitos",
-  "password": "123"
+  "password": "password"
 }
