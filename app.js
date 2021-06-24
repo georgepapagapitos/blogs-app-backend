@@ -33,7 +33,7 @@ app.use('/api/login', loginRouter);
 
 if (process.env.NODE_ENV === 'test') {
   const testRouter = require('./controllers/test.js');
-  app.use('/api/testing', testRouter);
+  app.use('/api/test', testRouter);
 }
 
 app.use(middleware.unknownEndpoint);
